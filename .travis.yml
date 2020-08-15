@@ -1,3 +1,5 @@
+language: bash
+
 before_script:
   - wget https://downloads.dockerslim.com/releases/1.31.0/dist_linux.tar.gz -O /tmp/docker-slim.tar.gz
   - tar -xvf /tmp/docker-slim.tar.gz
