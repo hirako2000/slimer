@@ -10,4 +10,4 @@ services:
   
 deploy:
   provider: script
-  script: bash docker_push
+  script: bash docker_push.sh
