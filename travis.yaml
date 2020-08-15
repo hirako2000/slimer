@@ -1,0 +1,17 @@
+before_script:
+  - wget https://downloads.dockerslim.com/releases/1.31.0/dist_linux.tar.gz -O /tmp/docker-slim.tar.gz
+  - tar -xvf /tmp/docker-slim.tar.gz
+  - export PATH=$PATH:/tmp/dist-linux/
+  
+services:
+  - docker
+  
+deploy:
+  provider: script
+  script: bash docker_push
+    
+#!/bin/bash
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+docker pull -t "${USER}/${SRC}"
+docker-slim build --target "${USER}/${SRC}"
+docker push "${USER}/${DST}"
