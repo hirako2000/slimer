@@ -1,8 +1,9 @@
 language: bash
 
 before_script:
-  - wget https://downloads.dockerslim.com/releases/1.31.0/dist_linux.tar.gz -O /tmp/dist_linux.tar.gz
-  - tar -xvf /tmp/dist_linux.tar.gz
+  - wget https://downloads.dockerslim.com/releases/1.31.0/dist_linux.tar.gz
+  - tar -xvf dist_linux.tar.gz
+  - export PATH=$PATH:$PWD/dist-linux/
   - export PATH=$PATH:$PWD/dist-linux/
   
 services:
