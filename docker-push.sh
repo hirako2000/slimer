@@ -1,5 +1,5 @@
 #!/bin/bash
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-docker pull -t "${USER}/${SRC}"
-docker-slim build --target "${USER}/${SRC}"
-docker push "${USER}/${DST}"
+docker pull -t "${SRC_USER}/${SRC_IMAGE}"
+docker-slim build --target "${SRC_USER}/${SRC_IMAGE}"
+docker push "${DST_USER}/${DST_IMAGE}"
